@@ -34,7 +34,7 @@ class Game extends Model
 
     public function currentWinner()
     {
-        return $this->currentTotalPoints()->sortBy('score')->last()['player'];
+        return $this->currentTotalPoints()->sortBy('score')->first()['player'];
     }
 
     public function currentTotalPoints()
