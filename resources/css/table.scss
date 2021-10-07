@@ -1,0 +1,141 @@
+table.schedule-table {
+    position: relative;
+    table-layout: fixed;
+    border-collapse: collapse;
+    width: 100%;
+    thead {
+        @apply bg-gray-200;
+        tr {
+            th {
+                text-align: center;
+                width: auto;
+                text-transform: uppercase;
+                @apply px-3 py-2 text-sm font-semibold text-gray-700 border border-gray-300;
+                &:first-child {
+                    width: 120px;
+                }
+            }
+        }
+    }
+    tbody {
+        text-align: left;
+        @apply p-1;
+        tr {
+            td {
+                width: auto;
+                position: relative;
+                @apply px-4 py-3 border border-gray-300 bg-white text-gray-700;
+            }
+            &:hover {
+                td {
+                    @apply bg-gray-100;
+                }
+            }
+        }
+    }
+}
+
+table {
+    &.table-default {
+        @apply min-w-full shadow rounded-lg;
+        &.small {
+            thead {
+                tr {
+                    th {
+                        &:not(.actions) {
+                            @apply px-3 text-xs;
+                        }
+                    }
+                }
+            }
+            tbody {
+                tr {
+                    td {
+                        @apply px-3 text-xs;
+                    }
+                }
+            }
+        }
+        &.with-pagination {
+            @apply rounded-none shadow-none;
+            tbody {
+                @apply rounded-none;
+                tr {
+                    &:last-child {
+                        td:last-child {
+                            @apply rounded-none;
+                        }
+                        td:first-child {
+                            @apply rounded-none;
+                        }
+                    }
+                    &:last-child {
+                        td {
+                            @apply border-b;
+                        }
+                    }
+                }
+            }
+        }
+        thead {
+            tr {
+                th {
+                    @apply px-6 py-3 text-xs whitespace-nowrap font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50;
+                    &:first-child {
+                        @apply rounded-tl-lg;
+                    }
+                    &:last-child {
+                        @apply rounded-tr-lg;
+                    }
+                    &.right {
+                        text-align: right;
+                    }
+                }
+            }
+        }
+        tbody {
+            @apply bg-white rounded-b-lg;
+            tr {
+                td {
+                    @apply px-6 py-4 whitespace-nowrap text-sm text-gray-600 border-b border-gray-200;
+                    &.right {
+                        text-align: right;
+                    }
+                }
+                &:hover {
+                    td {
+                        @apply bg-gray-100;
+                    }
+                }
+                &:last-child {
+                    td:last-child {
+                        @apply rounded-br-lg;
+                    }
+                    td:first-child {
+                        @apply rounded-bl-lg;
+                    }
+                }
+                &:last-child {
+                    td {
+                        @apply border-b-0;
+                    }
+                }
+            }
+        }
+    }
+
+    &.bordered {
+        tbody, tr, td, th {
+            @apply border border-gray-400;
+        }
+    }
+}
+
+table.table-default.compact {
+    thead tr th {
+        @apply px-3 py-3 text-xs;
+    }
+    tbody tr td {
+        @apply px-3 py-2 text-xs;
+    }
+}

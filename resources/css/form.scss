@@ -1,0 +1,12 @@
+
+.label {
+    @apply block text-sm font-medium tracking-wide text-gray-800;
+}
+.input {
+    @apply transition duration-150 ease-in-out max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md;
+}
+
+.w-full .input {
+    width: 100%;
+    max-width: 100%;
+}
