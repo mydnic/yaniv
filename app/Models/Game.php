@@ -48,7 +48,7 @@ class Game extends Model
             ]);
         }
 
-        return $points;
+        return $points->sortByDesc('score');
     }
 
     public function lastRounds()
@@ -90,7 +90,9 @@ class Game extends Model
 
     public function registerWinner(Player $player)
     {
-        $this->winner_id = $this->players->where('id', '!=', $player->id)->first()->id;
-        $this->save();
+        if (!$this->winner_id) {
+            $this->winner_id = $this->players->where('id', '!=', $player->id)->first()->id;
+            $this->save();
+        }
     }
 }
