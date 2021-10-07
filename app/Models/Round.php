@@ -34,7 +34,7 @@ class Round extends Model
 
     public function sumarize()
     {
-        $playerId = $this->points()->orderBy('points', 'desc')->first()->player_id;
+        $playerId = $this->points()->orderBy('points', 'asc')->first()->player_id;
         $this->winner_id = $playerId;
         $this->save();
 
