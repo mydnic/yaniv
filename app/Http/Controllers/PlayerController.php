@@ -14,7 +14,9 @@ class PlayerController extends Controller
      */
     public function index()
     {
-        //
+        $players = Player::all();
+
+        return view('player.index', compact('players'));
     }
 
     /**
@@ -59,7 +61,7 @@ class PlayerController extends Controller
      */
     public function edit(Player $player)
     {
-        //
+        return view('player.edit', compact('player'));
     }
 
     /**
@@ -71,7 +73,9 @@ class PlayerController extends Controller
      */
     public function update(Request $request, Player $player)
     {
-        //
+        $player->update($request->all());
+
+        return redirect()->route('player.index');
     }
 
     /**

@@ -10,6 +10,18 @@
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
     <body class="antialiased">
+        <nav class="flex justify-center space-x-3 bg-white border-b shadow-sm">
+            <a href="/" class="px-5 py-3 hover:bg-indigo-500 hover:text-white">
+                Home
+            </a>
+            <a href="{{route('game.index')}}" class="px-5 py-3 hover:bg-indigo-500 hover:text-white">
+                Parties
+            </a>
+            <a href="{{route('player.index')}}" class="px-5 py-3 hover:bg-indigo-500 hover:text-white">
+                Joueurs
+            </a>
+        </nav>
+
         @yield('content')
     </body>
 </html>
