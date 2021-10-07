@@ -72,7 +72,7 @@
             @foreach ($game->players as $player)
                 <div>
                     <label class="label">{{ $player->name }}</label>
-                    <input class="input" value="0" type="number" placeholder="points" name="points[{{$player->id}}]" required>
+                    <input class="input" type="number" placeholder="points" name="points[{{$player->id}}]" required>
                 </div>
             @endforeach
         </div>
@@ -95,6 +95,7 @@
                     <th>{{ $player->name }}</th>
                 @endforeach
                 <th>Heure</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -111,6 +112,11 @@
                         </td>
                     @endforeach
                     <td>{{$round->created_at->format('H:i')}}</td>
+                    <td class="text-right">
+                        <a href="{{route('game.round.edit', [$game, $round])}}" class="text-indigo-600 hover:text-indigo-900">
+                            Modifier
+                        </a>
+                    </td>
                 </tr>
             @endforeach
         </tbody>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Game;
 
 use App\Models\Game;
+use App\Models\Point;
 use App\Models\Round;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -60,7 +61,7 @@ class RoundController extends Controller
      * @param  \App\Models\Round  $round
      * @return \Illuminate\Http\Response
      */
-    public function show(Round $round, Game $game)
+    public function show(Game $game, Round $round)
     {
         //
     }
@@ -71,9 +72,9 @@ class RoundController extends Controller
      * @param  \App\Models\Round  $round
      * @return \Illuminate\Http\Response
      */
-    public function edit(Round $round, Game $game)
+    public function edit(Game $game, Round $round)
     {
-        //
+        return view('round.edit', compact('round', 'game'));
     }
 
     /**
@@ -83,9 +84,17 @@ class RoundController extends Controller
      * @param  \App\Models\Round  $round
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Round $round, Game $game)
+    public function update(Request $request, Game $game, Round $round)
     {
-        //
+        foreach ($request->points as $pointId => $value) {
+            Point::find($pointId)->update([
+                'points' => $value
+            ]);
+        }
+
+        $round->sumarize();
+
+        return back();
     }
 
     /**
@@ -94,7 +103,7 @@ class RoundController extends Controller
      * @param  \App\Models\Round  $round
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Round $round, Game $game)
+    public function destroy(Game $game, Round $round)
     {
         //
     }
