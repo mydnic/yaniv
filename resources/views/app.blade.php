@@ -6,8 +6,7 @@
 
         <title>{{config('app.name')}}</title>
 
-        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-        <script src="{{ mix('js/app.js') }}" defer></script>
+        @vite(['resources/js/app.js', 'resources/css/app.css'])
     </head>
     <body class="antialiased">
         <nav class="flex justify-center space-x-3 bg-white border-b shadow-sm">
