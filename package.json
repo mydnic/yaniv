@@ -10,7 +10,7 @@
         "laravel-mix": "^6.0.6",
         "laravel-vite-plugin": "^0.7.8",
         "lodash": "^4.18.1",
-        "postcss": "^8.4.31",
+        "postcss": "^8.5.10",
         "unplugin-vue-components": "^0.25.1",
         "vite": "^6.4.2"
     },
