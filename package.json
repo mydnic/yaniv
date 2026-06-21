@@ -12,7 +12,7 @@
         "lodash": "^4.18.1",
         "postcss": "^8.5.10",
         "unplugin-vue-components": "^0.25.1",
-        "vite": "^6.4.2"
+        "vite": "^6.4.3"
     },
     "dependencies": {
         "@tailwindcss/forms": "^0.5.3",
